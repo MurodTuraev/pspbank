@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+    <style>
+ .table-striped tr td{
+     border: 1px solid #cccccc;
+     padding: 3px 5px;
+     justify-content: center;
+     align-items: center;
+     font-size: 12px;
+ }
+ h5{
+     font-size: 12px;
+ }
+ p{
+     font-size: 13px;
+ }
+#wrap_section_bh{
+    {#border-color:  #00A998;#}
+    {#border-style: solid;#}
+    {#border-width: 2px;#}
+}
+    </style>
+
+<section id="bg"  >
+        <div id="wrap_section_bh "   >
+            <div class="card-header p-4">
+                    <table  >
+                        <tr>
+                            <td style="padding:0 5px 0 5px">
+                                <img src="http://192.168.0.106:1337/static/img/log.png" style="width: 200px"  >
+                            </td>
+                            <td colspan="2" style="text-align: center; ">
+                               <h5 style="margin: 0; ">  KREDIT OLUVCHINING KREDIT QAYTARILMASLIGI BO'YICHA JAVOBGARLIGINI SUG'URTA QILISH YUZASIDAN</h5>
+                                <h5 style="color: darkred;margin: 0">{{ polis_sery }} {{ polis_number }}</h5>
+                                <h5 class="text-dark text-uppercase" style="margin: 0"> SUG‘URTA POLISI</h5>
+                            </td>
+                            <td style="text-align: right;padding: 17px 15px">
+                              <img src="http://192.168.0.106:1337/static/img/sqb.png"  style="width: 120px;text-align: right;float: right"  >
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="col-12"  >
+                        <hr style="margin: 0;padding: 15px 0">
+                        <p class="" style="margin: 0;padding: 15px 15px 0 15px ;font-style: italic"> "O‘zagrosug‘urta" AJ, O‘zbekiston Respublikasi Moliya vazirligi tomonidan berilgan
+                            Litsenziya va 2021-yil 2-iyuldagi 425-sonli sug'urta shartnomasi shartlariga asosan vujudga
+                            kelgan zararni qoplash majburiyatini oladi.</p>
+                        <p class="m-0" style="margin: 0;padding: 15px 15px 15px 15px">Polis rasmiylashtirilgan sana: <strong>20.02.2021 yil</strong></p>
+                    </div>
+            </div>
+            <div class="card-body p-4">
+                <div class="row  ">
+                    <div class="col-12">
+                        <table class="table table-striped" style="margin: 15px 0">
+                            <tbody>
+                            <tr  >
+                                <td>Sug‘urtalovchi:</td>
+                                <td>"O‘zagrosug‘urta" AJ</td>
+                            </tr>
+                            <tr>
+                                <td>Sug‘urta qildiruvchi (Naf oluvchi)</td>
+                                <td>"O‘zsanoatqurilishbank" ATB</td>
+                            </tr>
+                            <tr >
+                                <td>Kredit oluvchi:</td>
+                                <td>{{ client_name }} | {{ client_passport }} | {{ client_phone }} | {{ client_address }}.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Kredit shartnomasi:</td>
+                                <td>20.02.2021 yildagi N:1246-sonli</td>
+                            </tr>
+                            <tr  >
+                                <td>Sug‘urtala hodisasi</td>
+                                <td>Qarz oluvchi tomonidan kredit shartnomasining kredit to‘lovlari bilan bog‘liq
+                                    bo‘lgan majburiyatlarni bajarmasligi <br> yoki lozim darajada bajarmasligi (kredit
+                                    to‘lovlarini shartnomada belgilangan muddatda va miqdorda to‘lanmasligi)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> Sug‘urta muddati:</td>
+                                <td><span> {{ polis_begin }} yildan </span> <span>{{ polis_end }}</span> yilgacha</td>
+                            </tr>
+                            <tr>
+                                <td> Sug‘urta qiymati(kredit summasi):</td>
+                                <td> {{ insurance_cost}} <span>({{ insurance_cost_word }}) so‘m</span></td>
+                            </tr>
+                            <tr  >
+                                <td> Sug‘urta puli:</td>
+                                <td>{{ insurance_liability | intcomma }} <span>({{ insurance_liability_word }}) so‘m</span></td>
+                            </tr>
+                            <tr>
+                                <td> Sug‘urta mukofoti:</td>
+                                <td>{{ insurance_premium | intcomma}} <span>({{ insurance_premium_word }}) so‘m</span></td>
+                            </tr>
+                            <tr  >
+                                <td>Belgilangan sug‘urta tarifi:</td>
+                                <td>3 %</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer p-4" style="background-color: #F7F7F7;   ">
+                <div class="row ">
+                    <br>
+                    <h5 style="margin: 0">Sug‘urta polisi predmeti:</h5>
+                    <p  style="font-style: italic; ">
+                        Sug‘urtalovchi sug‘urta mukofoti sug‘urta polisida ko‘rsatilgan miqdor va muddatda to‘lanilishi evaziga,
+                        sug‘urta hodisasi sodir bo‘lganda sug‘urta qoplamasini
+                        Sug‘urta qildiruvchiga belgilangan tartibda va miqdorda qoplash majburiyatini oladi.
+                    </p>
+
+                    <table style="  padding: 10px 0px 10px 0px ">
+                        <tr>
+                            <td>
+                        <h5 style="margin: 0">Sug'urtalovchining rekvizitlari</h5>
+                        <p style="margin: 0">
+                            Sug‘urtalovchi: <strong>“O‘zagrosug‘urta” AJ</strong> <br>
+                            Manzili: <strong>Toshkent sh., Chilonzor-19, 61/2</strong> <br>
+                            Bank: <strong>“O'zsanoatqurilishbank” Bosh ofisi</strong> <br>
+                            H/r: <strong>2260 8000 0001 0116 9002</strong> <br>
+                            OKED: <strong>65120</strong> <br>
+                            MFO: <strong>00440</strong>, STIR: <strong>201042345</strong> <br>
+                            sayt: <strong>agros.uz</strong> <br>
+                            e-mail: <strong>info@agros.uz</strong> <br>
+
+                        </p>
+                            </td>
+                            <td>
+
+
+                             <h5 style="margin: 0">Sug‘urta polisi</h5>
+                           <p style="margin: 0">
+                               Noyob raqam: <strong>{{ uuid }}</strong> <br>
+                               Polis seriyasi va raqami: <strong>{{ polis_sery }} {{ polis_number }} </strong> <br>
+                                QR-CODEni skaner qiling: <br>     <br>
+                                  <img src="{{ qrcode }}"  style="width: 85px;text-align: right;float: right">
+
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+</section>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
